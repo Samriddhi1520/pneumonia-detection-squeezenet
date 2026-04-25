@@ -1,4 +1,4 @@
-# Project Requirements —
+# Project Requirements — Use Kaggle Notebook
 # SqueezeNet Implementation for Pneumonia Detection
 # Python 3.7+
 
