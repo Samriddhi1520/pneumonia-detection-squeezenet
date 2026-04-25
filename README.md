@@ -146,7 +146,7 @@ unzip chest-xray-pneumonia.zip
 
 2. **Run Locally** (if you have GPU):
    ```bash
-   jupyter notebook Lab_Assignment_2_SqueezeNet_Pneumonia.ipynb
+   jupyter notebook chest-xray_Pneumonia.ipynb
    ```
 
 ---
@@ -163,8 +163,6 @@ Lab_Assignment_2_SqueezeNet_Pneumonia/
 └── results/                                       ← Output folder
     ├── confusion_matrix.png
     ├── training_history.png
-    ├── feature_maps.png
-    ├── grad_cam.png
     └── performance_metrics.csv
 ```
 
@@ -214,122 +212,13 @@ Regularization:      L2(0.001)
 
 ---
 
-## 📊 Results Summary
-
-### Test Set Performance
-
-| Metric | Value |
-|--------|-------|
-| **Accuracy** | ~92-95% |
-| **Precision** | ~92-95% |
-| **Recall** | ~92-95% |
-| **F1-Score** | ~92-95% |
-| **ROC-AUC** | ~0.98 |
-
-> **Note:** Exact values depend on random seed and Colab GPU variation. Results are consistent across runs.
-
 ### Key Findings
 
-✅ **Two-phase training improves** final validation accuracy by 2-3% over Phase 1 alone  
-✅ **Data augmentation is critical** — prevents overfitting despite small validation set  
-✅ **Class weights handle imbalance** — improves PNEUMONIA recall (most critical metric)  
-✅ **Model is efficient** — inference ~15-30ms per image on GPU, <4 MB model size  
-✅ **Generalizes well** — test accuracy close to validation accuracy (no major overfitting)  
-
----
-
-## 🔍 Advanced Analysis
-
-### 1. Feature Map Visualization
-Displays how the network extracts features at different depths:
-- **Layer 1 (conv1):** Low-level edge detection
-- **Layer 2 (fire2):** Mid-level pattern recognition
-- **Layer 3 (fire5):** High-level semantic features
-
-### 2. Grad-CAM Visualization
-Shows which regions of the X-ray the model focuses on when making predictions. **Important for medical interpretability!**
-
-### 3. Threshold Optimization
-Analyzes precision-recall trade-off at different decision thresholds:
-- **Default (0.5):** Balanced precision-recall
-- **Lower threshold (0.3):** Higher recall (catch more cases), accept false positives
-- **Higher threshold (0.7):** Higher precision (fewer false alarms), may miss cases
-
-**Clinical Recommendation:** Use threshold **0.3-0.4** to prioritize recall (catching all pneumonia cases)
-
-### 4. Error Analysis
-Identifies:
-- **False Negatives** (missed pneumonia cases) ⚠️ CRITICAL
-- **False Positives** (healthy patients flagged) — acceptable for screening
-
-### 5. Model Efficiency Metrics
-- Parameters: ~1.2M
-- Model size: ~4 MB (Float32) or ~1 MB (INT8 quantized)
-- Inference speed: ~20 ms per image (GPU), suitable for real-time screening
-
----
-
-## 🏥 Clinical Application Considerations
-
-### ✅ Strengths
-- Lightweight model → deployable on portable devices
-- High recall → catches most pneumonia cases
-- Interpretable via Grad-CAM → explains which regions were important
-- Fast inference → practical for screening workflows
-
-### ⚠️ Limitations
-- **Never replaces radiologist** — always requires human expert review
-- Trained on pediatric data → may not generalize to adults
-- Single dataset → may not work with different X-ray equipment
-- Confidence scores don't account for uncertainty
-
-### 🔧 Recommendations for Clinical Deployment
-1. **Use as second-opinion tool** — radiologist + model
-2. **Lower decision threshold** to 0.3-0.4 for maximum sensitivity
-3. **Log all predictions** with confidence scores for audit trails
-4. **Regular retraining** on new hospital data
-5. **Validate on different populations** before deployment
-6. **Obtain ethical approval** before clinical use
-7. **Implement human-in-the-loop** feedback system
-
----
-
-## 📝 Assignment Checklist
-
-- [x] Research paper selection and summary (SqueezeNet, Iandola et al. 2016)
-- [x] Dataset identification and description (Chest X-Ray Pneumonia, Kaggle)
-- [x] Data preprocessing and augmentation
-- [x] Train/Validation/Test split
-- [x] Pre-trained model architecture implementation (custom SqueezeNet)
-- [x] Feature map visualization (3 representative layers)
-- [x] Two-phase fine-tuning with documented hyperparameters
-- [x] Training curves (Accuracy, Loss, Precision, Recall)
-- [x] Model evaluation metrics (Confusion Matrix, Classification Report)
-- [x] Comparison with research paper findings
-- [x] Sample prediction visualization
-- [x] Discussion of weaknesses and improvements
-- [x] Grad-CAM for model interpretability
-- [x] ROC-AUC analysis
-- [x] Threshold optimization for clinical use
-- [x] Error analysis and discussion
-- [x] Model efficiency analysis
-- [x] Production-ready recommendations
-
----
-
-## 🎓 Learning Outcomes
-
-After completing this project, you should be able to:
-
-1. **Read and understand** deep learning research papers
-2. **Implement** CNN architectures from scratch
-3. **Apply** transfer learning and fine-tuning techniques
-4. **Handle** class imbalance in medical datasets
-5. **Evaluate** models using medical domain-specific metrics
-6. **Interpret** CNN predictions using visualization techniques (Grad-CAM)
-7. **Optimize** models for deployment on edge devices
-8. **Deploy** production-grade deep learning systems
-9. **Consider** ethical implications of ML in healthcare
+ **Two-phase training improves** final validation accuracy by 2-3% over Phase 1 alone  
+ **Data augmentation is critical** — prevents overfitting despite small validation set  
+ **Class weights handle imbalance** — improves PNEUMONIA recall (most critical metric)  
+ **Model is efficient** — inference ~15-30ms per image on GPU, <4 MB model size  
+ **Generalizes well** — test accuracy close to validation accuracy (no major overfitting)  
 
 ---
 
@@ -362,101 +251,3 @@ After completing this project, you should be able to:
    - https://www.tensorflow.org/api_docs/
    - https://keras.io/
 
----
-
-## 💡 Tips for Success
-
-### Before Running
-- [ ] Download the Chest X-Ray dataset from Kaggle
-- [ ] Check GPU availability (`tf.config.list_physical_devices('GPU')`)
-- [ ] Set random seed for reproducibility
-
-### During Training
-- [ ] Monitor GPU memory usage during Phase 1
-- [ ] Watch for early stopping triggers (patience patience=5 in Phase 1)
-- [ ] Save best model checkpoints (done automatically)
-
-### After Training
-- [ ] Always validate on test set (NOT used for training)
-- [ ] Compare with baseline (random classifier → 50% accuracy)
-- [ ] Visualize failure cases (false negatives especially)
-- [ ] Document any modifications from the original paper
-
-### Common Issues & Solutions
-
-| Issue | Solution |
-|-------|----------|
-| GPU out of memory | Reduce batch size from 32 to 16 or 8 |
-| Model not converging | Lower initial learning rate (try 1e-4 in Phase 1) |
-| Overfitting visible | Increase dropout rate or L2 regularization |
-| Validation acc noisy | Dataset validation set is small (16 samples), use k-fold CV |
-| Different results each run | Set random seed (done in notebook) |
-
----
-
-## 🤝 Contributing & Collaboration
-
-This is an **educational lab assignment**. If you're working in a group:
-
-1. Assign roles: architecture engineer, data specialist, visualization expert
-2. Use **version control** (Git/GitHub)
-3. **Document decisions** in commit messages
-4. **Share results** weekly with comparisons
-5. **Practice presentations** — explain your work clearly
-
-### For Publication/Sharing
-- Add your GitHub repository link to declaration section
-- Create a `requirements.txt` with all dependencies
-- Add this README to your repo
-- Include sample output plots in a `results/` folder
-
----
-
-## 📧 Contact & Support
-
-### If you're stuck:
-1. **Check the notebook comments** — they explain every section
-2. **Read the research paper** — it has additional context
-3. **Look at TensorFlow docs** — official source of truth
-4. **Search similar projects** on GitHub (search "SqueezeNet")
-5. **Ask your instructor** — they know the exact requirements
-
----
-
-## 📜 Academic Integrity
-
-This project is designed to teach you **how to implement** research papers. Remember:
-
-✅ **DO:**
-- Study the paper and understand the architecture
-- Implement the code yourself
-- Experiment with hyperparameters
-- Document your findings
-- Cite all sources
-
-❌ **DON'T:**
-- Copy code without understanding it
-- Plagiarize results from other sources
-- Misrepresent results or metrics
-- Submit without your own effort
-- Ignore proper citations
-
----
-
-## 🎉 Good Luck!
-
-This is a **comprehensive, production-grade project** that covers both fundamentals and advanced techniques. By completing it successfully, you'll have:
-
-✅ A working pneumonia detection model  
-✅ Deep understanding of SqueezeNet architecture  
-✅ Experience with medical image analysis  
-✅ Portfolio project to showcase  
-✅ Knowledge for deploying ML in healthcare  
-
-**Happy coding! 🚀**
-
----
-
-**Last Updated:** April 2026  
-**Version:** 1.0 (Complete & Production-Ready)  
-**Status:** ✅ Ready for Submission
