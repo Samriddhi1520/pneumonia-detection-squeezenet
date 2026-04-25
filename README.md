@@ -1,20 +1,19 @@
 # 🫁 Pneumonia Detection using SqueezeNet: A Deep Learning Lab Assignment
 
-## 📚 Project Overview
+##  Project Overview
 
 This is a **complete implementation** of a deep learning lab assignment focused on implementing the **SqueezeNet** architecture (Iandola et al., 2016) for medical image classification. The project applies SqueezeNet to **pneumonia detection** from chest X-ray images using the [Kaggle Chest X-Ray Pneumonia dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
 
 ### Key Features
-✅ **Complete Research Paper Implementation** — SqueezeNet architecture from scratch  
-✅ **Two-Phase Fine-Tuning** — Sophisticated training strategy with hyperparameter optimization  
-✅ **Medical Image Analysis** — Proper handling of class imbalance and domain-specific metrics  
-✅ **Advanced Visualizations** — Feature maps, Grad-CAM, training curves, confusion matrices  
-✅ **Production-Ready Code** — Clean, well-documented, ready for deployment  
-✅ **Bonus Analysis** — ROC-AUC, threshold optimization, error analysis, efficiency metrics  
+ **Complete Research Paper Implementation** — SqueezeNet architecture from scratch  
+ **Two-Phase Fine-Tuning** — Sophisticated training strategy with hyperparameter optimization  
+ **Medical Image Analysis** — Proper handling of class imbalance and domain-specific metrics  
+ **Advanced Visualizations** — Feature maps, Grad-CAM, training curves, confusion matrices  
+ **Production-Ready Code** — Clean, well-documented, ready for deployment  
 
 ---
 
-## 📖 Research Paper Summary
+##  Research Paper Summary
 
 **Paper:** *SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size*
 
@@ -33,7 +32,7 @@ Medical imaging applications often require models deployable on resource-constra
 
 ---
 
-## 📊 Dataset Information
+##  Dataset Information
 
 **Dataset:** Chest X-Ray Images (Pneumonia)  
 **Source:** [Kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)  
@@ -68,7 +67,7 @@ Test Set:
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ### SqueezeNet Architecture
 
@@ -112,7 +111,7 @@ Input
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Requirements
 ```python
@@ -151,7 +150,7 @@ unzip chest-xray-pneumonia.zip
 
 ---
 
-## 📈 Project Structure
+##  Project Structure
 
 ```
 Lab_Assignment_2_SqueezeNet_Pneumonia/
@@ -168,7 +167,7 @@ Lab_Assignment_2_SqueezeNet_Pneumonia/
 
 ---
 
-## 🎯 Training Strategy
+##  Training Strategy
 
 ### Two-Phase Training Approach
 
@@ -222,7 +221,7 @@ Regularization:      L2(0.001)
 
 ---
 
-## 📚 References
+##  References
 
 1. **SqueezeNet Paper:**
    - Iandola, F. N., Han, S., Moskewicz, M. W., Ashraf, K., Dally, W. J., & Keutzer, K. (2016).
