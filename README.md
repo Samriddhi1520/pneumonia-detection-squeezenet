@@ -2,7 +2,7 @@
 
 ##  Project Overview
 
-This is a **complete implementation** of a deep learning lab assignment focused on implementing the **SqueezeNet** architecture (Iandola et al., 2016) for medical image classification. The project applies SqueezeNet to **pneumonia detection** from chest X-ray images using the [Kaggle Chest X-Ray Pneumonia dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
+This is a **complete implementation** of a deep learning lab assignment focused on implementing the **SqueezeNet** architecture (Iandola et al.) for medical image classification. The project applies SqueezeNet to **pneumonia detection** from chest X-ray images using the [Kaggle Chest X-Ray Pneumonia dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
 
 ### Key Features
  **Complete Research Paper Implementation** — SqueezeNet architecture from scratch  
@@ -17,7 +17,7 @@ This is a **complete implementation** of a deep learning lab assignment focused 
 
 **Paper:** *SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size*
 
-**Authors:** Iandola et al. (2016)
+**Authors:** Iandola et al. 
 
 **Key Contribution:** A lightweight CNN architecture that achieves **AlexNet-level ImageNet accuracy** while using:
 - 50× fewer parameters
@@ -36,7 +36,7 @@ Medical imaging applications often require models deployable on resource-constra
 
 **Dataset:** Chest X-Ray Images (Pneumonia)  
 **Source:** [Kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)  
-**Published in:** [Cell Journal (Kermany et al., 2018)](https://www.cell.com/cell/fulltext/S0092-8674(18)30154-5)
+**Published in:** [Cell Journal (Kermany et al.)](https://www.cell.com/cell/fulltext/S0092-8674(18)30154-5)
 
 ### Dataset Statistics
 ```
