@@ -2,7 +2,7 @@
 
 ##  Project Overview
 
-This is a **complete implementation** of a deep learning lab assignment focused on implementing the **SqueezeNet** architecture (Iandola et al.) for medical image classification. The project applies SqueezeNet to **pneumonia detection** from chest X-ray images using the [Kaggle Chest X-Ray Pneumonia dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
+This is a **complete implementation** of the deep learning **SqueezeNet** architecture (Iandola et al.) for medical image classification. The project applies SqueezeNet to **pneumonia detection** from chest X-ray images using the [Kaggle Chest X-Ray Pneumonia dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
 
 ### Key Features
  **Complete Research Paper Implementation** — SqueezeNet architecture from scratch  
