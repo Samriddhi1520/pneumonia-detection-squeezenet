@@ -1,4 +1,4 @@
-# 🫁 Pneumonia Detection using SqueezeNet: A Deep Learning Lab Assignment
+# 🫁 Pneumonia Detection using SqueezeNet
 
 ##  Project Overview
 
