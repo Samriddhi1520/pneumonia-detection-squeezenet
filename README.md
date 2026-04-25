@@ -125,7 +125,7 @@ Input
 ### Installation
 ```bash
 # Clone the repository
-git clone <your-repo-link>
+git clone (https://github.com/Samriddhi1520/pneumonia-detection-squeezenet)
 cd pneumonia-detection-squeezenet
 
 # Install dependencies
@@ -138,9 +138,8 @@ unzip chest-xray-pneumonia.zip
 
 ### Running the Notebook
 
-1. **Open in Google Colab** (recommended for GPU access):
-   - Upload the `.ipynb` file to Google Colab
-   - Mount Google Drive if needed
+1. **Open in Kaggle Notebook** (recommended for GPU access):
+   - Upload the file to Kaggle Notebook
    - Run all cells sequentially
 
 2. **Run Locally** (if you have GPU):
